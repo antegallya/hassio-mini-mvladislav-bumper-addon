@@ -2,5 +2,7 @@
 # We'll change it to :latest when the stable release catches on.
 FROM ghcr.io/mvladislav/bumper:sha-74f121c
 
+WORKDIR /bumper
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

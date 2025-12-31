@@ -16,4 +16,6 @@ EOF
   )"
 fi
 
-exec "$@"
+env
+
+exec /bumper/.venv/bin/bumper
