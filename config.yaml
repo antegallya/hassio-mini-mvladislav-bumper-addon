@@ -1,0 +1,57 @@
+name: Bumper
+slug: bumper
+description: Local replacement for Ecovacs cloud services.
+version: "0.0.1"
+startup: services
+boot: auto
+arch:
+  - amd64
+  - arm64
+
+map:
+  - type: addon_config
+
+options:
+  CA_CERT_API_ONLY_BUMPER_CERT: false
+  BUMPER_DATA: "/data"
+  DB_FILE: "/data/bumper.db"
+  BUMPER_CA: "/config/certs/ca.crt"
+  BUMPER_CERT: "/config/certs/bumper.crt"
+  BUMPER_KEY: "/config/certs/bumper.key"
+  TOKEN_JWT_ALG: "ES256"
+  BUMPER_LISTEN: "0.0.0.0"
+  BUMPER_ANNOUNCE_IP: ""
+  WEB_SERVER_HTTPS_PORT: 443
+  DEBUG_BUMPER_LEVEL: "INFO"
+  DEBUG_BUMPER_VERBOSE: 1
+  DEBUG_LOGGING_API_REQUEST: false
+  DEBUG_LOGGING_API_REQUEST_MISSING: false
+  DEBUG_LOGGING_XMPP_REQUEST_ORIGINAL: false
+  DEBUG_LOGGING_XMPP_REQUEST_REFACTORED: false
+  DEBUG_LOGGING_XMPP_RESPONSE: false
+  DEBUG_LOGGING_SA_RESULT: false
+  BUMPER_PROXY_MQTT: false
+  BUMPER_PROXY_WEB: false
+
+schema:
+  CA_CERT_API_ONLY_BUMPER_CERT: bool
+  BUMPER_DATA: str
+  DB_FILE: str
+  BUMPER_CERTS: str
+  BUMPER_CA: str
+  BUMPER_CERT: str
+  BUMPER_KEY: str
+  TOKEN_JWT_ALG: str
+  BUMPER_LISTEN: str
+  BUMPER_ANNOUNCE_IP: str
+  WEB_SERVER_HTTPS_PORT: int
+  DEBUG_BUMPER_LEVEL: str
+  DEBUG_BUMPER_VERBOSE: int
+  DEBUG_LOGGING_API_REQUEST: bool
+  DEBUG_LOGGING_API_REQUEST_MISSING: bool
+  DEBUG_LOGGING_XMPP_REQUEST_ORIGINAL: bool
+  DEBUG_LOGGING_XMPP_REQUEST_REFACTORED: bool
+  DEBUG_LOGGING_XMPP_RESPONSE: bool
+  DEBUG_LOGGING_SA_RESULT: bool
+  BUMPER_PROXY_MQTT: bool
+  BUMPER_PROXY_WEB: bool
