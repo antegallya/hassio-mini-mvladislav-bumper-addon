@@ -5,7 +5,7 @@ A Hassio add-on for a minimal version of MVladislav's Ecovacs Bumper (https://gi
 This add-on only serves the Bumper part. The Nginx server is not included. Proxying is supposed to be handled elsewhere.
 
 ## Setup
-Certificates are to be put in `/addon_configs/{REPO}_bumper/certs/`, where `{REPO}` will be `local` or, some id (you can check that on the add-on page in Home Assistant). See https://github.com/MVladislav/bumper for details on how to generate certificates.
+Certificates are to be put in `/addon_configs/{REPO}_bumper/certs/`, where `{REPO}` will be `local` or, `ac77692b` (you can check that on the add-on page in Home Assistant). See https://github.com/MVladislav/bumper for details on how to generate certificates.
 
 Bumper internally listens to 443, 1883, 5223, 8007, but none are exposed to the host. This is expected to be handled by a reverse proxy, with SSL SNI support, which is required to be set up. Essentially, it needs to map some domains on bumper's HTTPS and some on MQTTS:
 ```nginx configuration
@@ -20,11 +20,11 @@ Bumper internally listens to 443, 1883, 5223, 8007, but none are exposed to the 
     server {
         listen 443;
         ssl_preread  on;
-        proxy_pass REPO_bumper:$final_port;
+        proxy_pass ac77692b_bumper:$final_port;
     }
 ```
 
-The hostname `REPO_number` is the add-on hostname, as explained above (e.g.: `local_bumper`).
+The hostname `ac77692b_number` is the add-on hostname, as explained above (e.g.: `local_bumper`).
 
 The default redirects to MQTTS, because the robot will contact bumper on 443 **by IP**. That means that there's no SNI to discriminate there. If we're using the same IP for Bumper and Home Assistant, we could still discriminate by domain, as Home Assistant clients will use the server name to connect. 
 
