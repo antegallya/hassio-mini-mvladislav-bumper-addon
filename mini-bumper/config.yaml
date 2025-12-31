@@ -1,7 +1,7 @@
 name: Bumper
 slug: bumper
 description: Local replacement for Ecovacs cloud services.
-version: "0.0.1"
+version: "0.0.2"
 url: https://github.com/antegallya/hassio-mini-mvladislav-bumper-addon
 startup: services
 boot: auto
@@ -38,7 +38,6 @@ schema:
   CA_CERT_API_ONLY_BUMPER_CERT: bool
   BUMPER_DATA: str
   DB_FILE: str
-  BUMPER_CERTS: str
   BUMPER_CA: str
   BUMPER_CERT: str
   BUMPER_KEY: str
