@@ -1,4 +1,4 @@
-# Bumper Ecovax
+# Home Assistant Add-on: mini MVladislav's Ecovax Bumper
 
 A Hassio add-on for a minimal version of MVladislav's Ecovacs Bumper (https://github.com/MVladislav/bumper).
 
